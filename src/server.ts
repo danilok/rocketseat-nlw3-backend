@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 import 'express-async-errors';
 
 // Importar arquivo com a definição de conexão com o banco
@@ -10,6 +11,7 @@ import errorHandler from './errors/handler';
 
 const app = express();
 
+app.use(cors());
 // Possibilitar que o express consiga interpretar requisições com JSON
 app.use(express.json());
 app.use(routes);
